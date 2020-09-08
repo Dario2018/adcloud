@@ -1,0 +1,58 @@
+<!--miniprogram/pages/history/history.wxml-->
+<view class="container">
+
+
+	<view class="usershowinfo">
+		<view class="userbgImg">
+			<image wx:if="{{isShowAttention}}" mode="scaleToFill" src="{{userInfo.bgUrl[userInfo.bgUrl.length-1]}}"></image>
+			<image wx:if="{{!isShowAttention}}" bindtap="changeBgUrl" mode="scaleToFill" src="{{userInfo.bgUrl[userInfo.bgUrl.length-1]}}"></image>
+		</view>
+		<view class="usercontent">
+			<view class="userheader">
+				<image mode="scaleToFill" src="{{userInfo.avatarUrl[userInfo.avatarUrl.length-1]}}"></image>
+			</view>
+			<view class="nameaddress">
+				<view class="nickName">{{userInfo.nickName[userInfo.nickName.length-1]}}</view>
+				<view class="address">
+					<text class="small">{{userInfo.gender[userInfo.gender.length-1]==1?'男':'女'}}</text>
+					<text class="small">{{userInfo.province[userInfo.province.length-1]}}</text>
+					<text class="small">{{userInfo.city[userInfo.city.length-1]}}</text>
+				</view>
+			</view>
+			<view class="attention" wx:if="{{isShowAttention && !hasAttented}}" data-id="{{userInfo.openid}}" bindtap="attention">
+				<text>+关注</text>
+			</view>
+			<view class="attention" wx:if="{{isShowAttention && hasAttented}}" data-id="{{userInfo.openid}}" bindtap="removeAttention">
+				<text>已关注</text>
+			</view>
+		</view>
+		<view class="desc small">
+			<text>简介：感谢您的关注</text>
+		</view>
+	</view>
+
+
+	<view class="row_items">
+		<view class="item" wx:for="{{messageslist}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">
+			<!-- 图片 -->
+			<view class="image">
+				<view class="delete" data-id="{{item._id}}" bindtap="deleteMessage">
+					<image src="../../images/delete.png"></image>
+				</view>
+				<image class="look" bindtap="lookDetail" data-id="{{item._id}}" mode="scaleToFill" src="{{item.addImageoneUrl[0]}}"></image>
+				<!-- ex:https://img1.gtimg.com/10/1048/104857/10485726_980x1200_0.jpg -->
+				<view class="scaninfo">
+					<view class="eye">
+						<image src="../../images/love.png"></image>
+					</view>
+					<view class="numbers"><text>{{item.loves.length}}</text></view>
+				</view>
+			</view>
+			<!-- gen'tou't -->
+			<view class="title">
+				<text>{{item.title}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="nodata" wx:if="{{messageslist==null || messageslist.length==0}}"><text>暂无发布的信息</text></view>
+</view>

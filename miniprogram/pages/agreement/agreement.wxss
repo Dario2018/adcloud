@@ -1,0 +1,4 @@
+/* miniprogram/pages/agreement/agreement.wxss */
+.userprocol{
+  font-weight: bold;
+}

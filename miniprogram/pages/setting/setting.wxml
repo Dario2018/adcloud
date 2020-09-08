@@ -1,0 +1,57 @@
+<!--miniprogram/pages/setting/setting.wxml-->
+<view class="container">
+	<view class="header" bindtap="uploadImage">
+		<text>头像</text>
+		<view class="images">
+			<image src="{{userInfo.avatarUrl}}"></image>
+		</view>
+		<text class="go">></text>
+	</view>
+
+	<view class="content" data-nickName="{{userInfo.nickName}}" bindtap="editNickName">
+		<text>名称</text>
+		<view class="showInfo">
+			<text wx:if="{{userInfo.nickName!=''}}">{{userInfo.nickName}}</text>
+		</view>
+		<text class="go">></text>
+	</view>
+
+	<view class="content" bindtap="gotoSex">
+		<text>性别</text>
+		<view class="showInfo">
+			<text wx:if="{{userInfo.hasGender}}">{{userInfo.gender==1?'男':'女'}}</text>
+		</view>
+		<text class="go">></text>
+	</view>
+
+	<view class="content" bindtap="gotoArea">
+		<text>地区</text>
+		<view class="showInfo">
+			<text wx:if="{{userInfo.showCity}}">{{userInfo.province}}  {{userInfo.city}}</text>
+		</view>
+		<text class="go">></text>
+	</view>
+
+	<!-- <view class="content">
+		<text>简介</text>
+		<view class="showInfo">
+			<text>{{userInfo.area}}</text>
+		</view>
+		<text class="go">></text>
+	</view> -->
+</view>
+
+<!--弹窗-修改名称-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">修改名称</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="text" maxlength="25" value="{{userInfo.nickName}}" bindblur="inputChange" class="input" placeholder="请输入名称"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>

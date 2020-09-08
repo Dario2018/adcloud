@@ -1,0 +1,148 @@
+/**index.wxss**/
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: '宋体';
+}
+
+/* 图表展示 */
+.echartdata {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #2E2E2E; */
+  height: 200px;
+  width: 100%;
+}
+
+.echartdata canvas {
+  width: 100%;
+  height: 200px;
+  color: white;
+}
+
+/** 各个指标的数据 */
+.todayrecommend {
+  height: 65px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #459EE7;
+}
+
+.datashow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 26px;
+}
+
+.datashow view {
+  margin-top: 3px;
+}
+
+.datashow view text {
+  margin-left: 5px;
+}
+
+.nums {
+  color: #F6F6F6;
+}
+
+.show-image {
+  width: 100%;
+  height: 200px;
+}
+
+.type-text {
+  display: flex;
+  flex-direction: column;
+  height: 40rpx;
+  width: 200rpx;
+  margin-top: 30px;
+  margin-left: 2px;
+  background-color: #272A2D;
+  color: #F5F5F5;
+  font-size: 35rpx;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.ad-view {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  height: 280rpx;
+  border: #E7E7E7 1px solid;
+  box-sizing: border-box;
+  justify-items: flex-start;
+}
+
+.image-lef {
+  width: 35%;
+  height: 279rpx;
+}
+
+.image-lef image {
+  height: 279rpx;
+}
+
+.description {
+  width: 550rpx;
+  height: 210rpx;
+}
+
+.description text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  word-break:break-all;
+  /* line-height: 24px; */
+}
+
+.person {
+  height: 69rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-content: center;
+  align-items: center;
+  font-size: 15px;
+  /* border-top: #E7E7E7 1px solid; */
+  text-align: left;
+}
+
+.headerimags {
+  margin-left: 2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.author {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.author text {
+  font-weight: bold;
+}
+
+.date {
+  position: absolute;
+  right: 5px;
+  width: 76px;
+  background-color: #272A2D;
+  color: #F5F5F5;
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}

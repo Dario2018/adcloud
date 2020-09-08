@@ -1,0 +1,7 @@
+<!--miniprogram/pages/linkus/linkus.wxml-->
+<view class="comtainer">
+	<view class="image">
+		<image mode="aspectFit" data-src="../../images/mycode.jpg" bindtap='previewImage' src="../../images/mycode.jpg"></image>
+	</view>
+  <view class="title"><text>请点击图中二维码添加管理员微信反馈您问题</text></view>
+</view>

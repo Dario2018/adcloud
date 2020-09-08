@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "painter": "/components/painter/painter",
+    "dialog-modal": "/components/dialogModal/dialogModal"
+  }
+}

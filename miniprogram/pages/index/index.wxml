@@ -1,0 +1,100 @@
+<!--index.wxml-->
+
+<!-- 图表展示 -->
+<view class="echartdata"><canvas canvas-id="dataEle" bindtouchstart="dataTouchHandler" binderror="canvasIdErrorCallback"></canvas></view>
+
+<!--数据展示-->
+<view class="todayrecommend">
+	<view class="datashow">
+		<view><text>近7日粉丝人数:</text><text class="nums">{{totalData.sevenTotalfens}}</text></view>
+		<view><text>近7日发表篇数:</text><text class="nums">{{totalData.sevenTotalmessages}}</text></view>
+	</view>
+	<view class="datashow">
+		<view><text>近7日访问量:</text><text class="nums">{{totalData.sevenTotalclicks}}</text></view>
+		<view><text>近7日被喜欢:</text><text class="nums">{{totalData.sevenTotalloves}}</text></view>
+	</view>
+</view>
+
+<!-- 类型-1 -->
+<view class="type-text" wx:if="{{technoeduList.length!=0}}" bindtap="refreshGetMessages" data-next="{{technoeduPageInfo.nextPage}}" data-total="{{technoeduPageInfo.totalSize}}" data-type="1">
+	<text>科技教育</text>
+</view>
+
+<!-- ad视图 -->
+<view class="ad-view" wx:for="{{technoeduList}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">
+	<view class="image-lef"  bindtap="toDetail" data-id="{{item._id}}">
+		<image class="show-image" src="{{item.addImageoneUrl[0]}}" mode="scaleToFill"></image>
+	</view>
+	<view class="message-rigth">
+		<view class="description"  bindtap="toDetail" data-id="{{item._id}}">
+			<text>{{item.content}}</text>
+		</view>
+		<view class="person">
+			<view bindtap="toUserInfo" data-id="{{item.openid}}">
+				<image class="headerimags"  src="{{item.avatarUrl}}"></image>
+			</view>
+			<view class="author" bindtap="toUserInfo" data-id="{{item.openid}}">
+				<text>{{item.nickName}}</text>
+			</view>
+			<view class="date">
+				<text>{{item.createTime}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 类型-2 -->
+<view class="type-text" wx:if="{{marketplace.length!=0}}" bindtap="refreshGetMessages" data-next="{{marketplacePageInfo.nextPage}}" data-total="{{marketplacePageInfo.totalSize}}" data-type="2">
+	<text>微商市场</text>s
+</view>
+
+<view class="ad-view" wx:for="{{marketplace}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">
+	<view class="image-lef"  bindtap="toDetail" data-id="{{item._id}}">
+		<image class="show-image" src="{{item.addImageoneUrl[0]}}" mode="scaleToFill"></image>
+	</view>
+	<view class="message-rigth">
+		<view class="description"  bindtap="toDetail" data-id="{{item._id}}">
+			<text>{{item.content}}</text>
+		</view>
+		<view class="person">
+			<view bindtap="toUserInfo" data-id="{{item.openid}}">
+				<image class="headerimags"  src="{{item.avatarUrl}}"></image>
+			</view>
+			<view class="author" bindtap="toUserInfo" data-id="{{item.openid}}">
+				<text>{{item.nickName}}</text>
+			</view>
+			<view class="date">
+				<text>{{item.createTime}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+
+<!-- 类型-3 -->
+<view class="type-text" wx:if="{{recommend.length!=0}}" bindtap="refreshGetMessages" data-next="{{recommendPageInfo.nextPage}}" data-total="{{recommendPageInfo.totalSize}}" data-type="3">
+	<text>为你推荐</text>
+</view>
+
+<!-- ad视图 -->
+<view class="ad-view" wx:for="{{recommend}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">
+	<view class="image-lef"  bindtap="toDetail" data-id="{{item._id}}">
+		<image class="show-image" src="{{item.addImageoneUrl[0]}}" mode="scaleToFill"></image>
+	</view>
+	<view class="message-rigth">
+		<view class="description"  bindtap="toDetail" data-id="{{item._id}}">
+			<text>{{item.content}}</text>
+		</view>
+		<view class="person">
+			<view bindtap="toUserInfo" data-id="{{item.openid}}">
+				<image class="headerimags"  src="{{item.avatarUrl}}"></image>
+			</view>
+			<view class="author" bindtap="toUserInfo" data-id="{{item.openid}}">
+				<text>{{item.nickName}}</text>
+			</view>
+			<view class="date">
+				<text>{{item.createTime}}</text>
+			</view>
+		</view>
+	</view>
+</view>

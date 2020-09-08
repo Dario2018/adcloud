@@ -1,0 +1,7 @@
+<!--miniprogram/pages/setting/sex/sex.wxml-->
+<view class="container">
+<!-- 男：1，女：0 -->
+ <view class="sex" hover-class="bgSex"  bindtap="selected" data-gender="1"><text>男</text><view  wx:if="{{selected && gender==1}}" class="selected"><image src="../../../images/selected.png"></image></view></view>
+ <view class="sex" hover-class="bgSex" bindtap="selected" data-gender="0"><text>女</text><view  wx:if="{{selected && gender==0}}" class="selected"><image src="../../../images/selected.png"></image></view></view>
+ <view class="complete"><button type="primary" loading="{{loading}}" bindtap="complete">完成</button></view>
+</view>

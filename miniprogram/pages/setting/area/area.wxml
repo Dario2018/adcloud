@@ -1,0 +1,18 @@
+<!--miniprogram/pages/setting/area/area.wxml-->
+<view class="container">
+<view class="title">
+<text>当前地区</text>
+</view>
+ <view class="showArea" hover-class="hoverClass"  bindtap="selected" data-type="0">
+ <text>{{!showCity?'':province}} {{!showCity?'不显示':city}}</text>
+ <view  wx:if="{{type==0}}" class="selected"><image src="../../../images/selected.png"></image></view>
+ </view>
+
+<view class="title">
+ <text>当前定位位置</text>
+</view>
+ <view class="showArea" hover-class="hoverClass" bindtap="selected" data-type="1">
+ <text>{{currentCity==null?'':currentProvince}} {{currentCity==null?'定位中...':currentCity}}</text>
+ <view  wx:if="{{type==1}}" class="selected"><image src="../../../images/selected.png"></image></view></view>
+ <view class="complete" bindtap="complete"><button type="primary" loading="{{loading}}">完成</button></view>
+</view>

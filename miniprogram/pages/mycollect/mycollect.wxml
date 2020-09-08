@@ -1,0 +1,14 @@
+<!--miniprogram/pages/mycollect/mycollect.wxml-->
+
+<view class="container">
+	<view class="ad-view" bindtap="toDetail" data-id="{{item._id}}" wx:for="{{mylovelist}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">
+		<view class="title">
+			<text>【{{item.type==1?'科技教育':item.type==2?'微商市场':'为你推荐'}}】{{item.title}}</text>
+		</view>
+		<view>
+			<image class="show-image" src="{{item.addImageoneUrl[0]}}" mode="scaleToFill"></image>
+		</view>
+	</view>
+
+	<view class="nodata" wx:if="{{mylovelist==null || mylovelist.length==0}}"><text>暂无我喜欢的</text></view>
+</view>

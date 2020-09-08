@@ -1,0 +1,109 @@
+<!--miniprogram/pages/my/my.wxml-->
+<!--index.wxml-->
+<view class="container">
+
+	<!-- 用户 -->
+	<view class="userinfo">
+		<view class="myavatar">
+			<button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url('../../images/user-unlogin.png')" size="default">
+			</button>
+			<button wx:if="{{logged}}" data-url="{{userInfo.avatarUrl}}" bindtap="previewImage" class="userinfo-avatar" style="background-image: url('{{userInfo.avatarUrl}}')" size="default">
+			</button>
+		</view>
+
+		<view class="userinfo-nickname" wx:if="{{logged && userInfo.nickName}}" bindtap="setting">
+			<text>欢迎您：{{userInfo.nickName}}</text><text class="go">></text>
+		</view>
+		<view class="userinfo-nickname" wx:if="{{!logged || !userInfo.nickName}}">
+			<text>点击头像登录</text>
+		</view>
+
+	</view>
+
+	<view class="agree" wx:if="{{showAgree}}" id="agree">
+		<view>
+			<radio class="radio" bindtap="selectRadio" data-checked="{{checked}}" checked="{{checked}}">
+				<text>我已阅读并同意</text>
+			</radio>
+		</view>
+		<view>
+			<navigator hover-class="none" url="../agreement/agreement" open-type="navigate" class="agree-text">
+				《<text>码农SHOW营小程序用户协议及隐私条款</text>》
+			</navigator>
+		</view>
+	</view>
+
+	<!-- 新增发布 -->
+	<view class="uploader" wx:if="{{logged}}">
+		<navigator url="../addmessages/addmessages" hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>发布信息</text><text class="go">></text>
+		</navigator>
+	</view>
+	<view class="uploader" wx:if="{{!logged}}" bindtap="showNotLoggin">
+		<navigator hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>发布信息</text><text class="go">></text>
+		</navigator>
+	</view>
+
+	<!-- 我发布的 -->
+	<view class="uploader" wx:if="{{logged}}">
+		<navigator url="../history/history" hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的发布</text><text class="go">></text>
+		</navigator>
+	</view>
+	<view class="uploader" wx:if="{{!logged}}" bindtap="showNotLoggin">
+		<navigator hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的发布</text><text class="go">></text>
+		</navigator>
+	</view>
+
+
+	<!-- 我的喜欢（发布的事物） -->
+	<view class="uploader" wx:if="{{logged}}">
+		<navigator url="../mycollect/mycollect" hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的喜欢</text><text class="go">></text>
+		</navigator>
+	</view>
+	<view class="uploader" wx:if="{{!logged}}" bindtap="showNotLoggin">
+		<navigator hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的喜欢</text><text class="go">></text>
+		</navigator>
+	</view>
+
+	<!-- 我关注的 微信账号-->
+	<!-- <view class="uploader" wx:if="{{logged}}">
+		<navigator url="../details/details" hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的关注</text><text class="go">></text>
+		</navigator>
+	</view>
+		<view class="uploader" wx:if="{{!logged}}" bindtap="showNotLoggin">
+		<navigator hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>我的关注</text><text class="go">></text>
+		</navigator>
+	</view> -->
+
+	<!-- 联系我们 -->
+	<view class="uploader">
+		<navigator url="../linkus/linkus" hover-class="hover-class" open-type="navigate" class="uploader-text">
+			<text>联系我们</text><text class="go">></text>
+		</navigator>
+	</view>
+
+
+
+	<!-- 最近浏览的 -->
+	<view class="scanning">
+		<text>最近浏览</text>
+	</view>
+
+	<view class="ad-view" bindtap="toDetail" data-id="{{item._id}}" wx:for="{{recentlyScans}}" wx:key="key" wx:for-index="idx" wx:for-item="item">
+		<view class="title">
+			<text wx:if="{{item.type==1}}">【科技教育】{{item.title}}</text>
+			<text wx:if="{{item.type==2}}">【微商市场】{{item.title}}</text>
+			<text wx:if="{{item.type==3}}">【为你推荐】{{item.title}}</text>
+		</view>
+		<view>
+			<image class="show-image" src="{{item.addImageoneUrl[0]}}" mode="scaleToFill"></image>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/chooseLib/chooseLib.wxml-->
+<view class="container">
+
+  <view class="list">
+    <view class="list-item">
+      <text class="black">初失败</text>
+    </view>
+    <view class="list-item">
+      <text class="request-text">您访问的页面被外星人掳走了...</text>
+    </view>
+  </view>
+
+</view>
+

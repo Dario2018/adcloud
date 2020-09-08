@@ -1,0 +1,53 @@
+{
+  "entryPagePath": "pages/index/index",
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/chooseLib/chooseLib",
+    "pages/details/details",
+    "pages/addmessages/addmessages",
+    "pages/mycollect/mycollect",
+    "pages/history/history",
+    "pages/linkus/linkus",
+    "pages/setting/setting",
+    "pages/addmessages/confirmAndedit/confirmAndedit",
+    "pages/setting/sex/sex",
+    "pages/setting/area/area",
+    "pages/agreement/agreement"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/iconfont-home.png",
+        "selectedIconPath": "images/iconfont-home-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/iconfont-user.png",
+        "selectedIconPath": "images/iconfont-user-active.png"
+      }
+    ],
+    "color": "#999999",
+    "backgroundColor": "#282923",
+    "selectedColor": "#459EE7",
+    "borderStyle": "black",
+    "position": "bottom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置展示"
+    }
+  }
+}

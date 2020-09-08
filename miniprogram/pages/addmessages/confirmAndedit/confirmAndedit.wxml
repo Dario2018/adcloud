@@ -1,0 +1,36 @@
+<!--miniprogram/pages/addmessages/confirmAndedit/confirmAndedit.wxml-->
+<view class="container">
+	<scroll-view class='main-scroll' scroll-y style="height: 100%">
+		<!-- 标题 -->
+		<view class="header">
+			<view class="title">
+				<text>{{messages.title}}</text>
+			</view>
+			<view class="status">
+				<text wx:if="{{messages.status==0 || messages.status==1}}" style="background-color: #2B56E2;">内容正在审核中</text>
+				<text wx:if="{{messages.status==2}}" style="background-color: #F71508;">内容审核不通过</text>
+				<text wx:if="{{messages.status==3}}" style="background-color: #07C160;">内容已投至信息市场</text>
+			</view>
+			<view class="author">
+				<text>作者:</text><text class="nick-name">{{messages.nickName}}</text>
+				<text>访问量:</text><text class="clicks">{{messages.clicks}}</text>
+			</view>
+		</view>
+		<!-- 消息图片 -->
+		<view class="images">
+			<view wx:if="{{messages.addImageoneUrl&&messages.addImageoneUrl.length!=0}}">
+				<image wx:for="{{messages.addImageoneUrl}}" wx:key="key" wx:for-index="idx" wx:for-item="imageUrl" src="{{imageUrl}}"></image>
+			</view>
+			<view wx:if="{{messages.addImagetwoUrl&&messages.addImagetwoUrl.length!=0}}">
+				<image wx:for="{{messages.addImagetwoUrl}}" wx:for-index="idx" wx:key="key" wx:for-item="imageUrl" src="{{imageUrl}}"></image>
+			</view>
+		</view>
+		<view class="description"><text>{{messages.content}}</text></view>
+		<view class="video" wx:if="{{messages.addVideoUrl && messages.addVideoUrl!='' && messages.addVideoUrl!=null}}"><video src="{{messages.addVideoUrl}}"></video></view>
+		<view class="nonecontent"></view>
+	</scroll-view>
+	<view class="shared">
+		<view class="edit" bindtap="toIndex"><button hover-class="button-hover" type="primary">返回首页</button></view>
+		<view class="confirm" bindtap="toMy"><button hover-class="button-hover" type="primary">查看我的发布</button></view>
+	</view>
+</view>

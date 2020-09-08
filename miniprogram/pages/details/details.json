@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "信息详情",
+  "usingComponents": {
+    "share-box": "/components/shareBox/shareBox"
+  },
+  "backgroundTextStyle":"light"
+}

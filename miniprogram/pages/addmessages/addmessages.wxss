@@ -1,0 +1,136 @@
+/* miniprogram/pages/addmessages/addmessages.wxss */
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: '宋体';
+  font-size: 34rpx;
+}
+.title{
+  margin-top: 5px;
+  width: 100%;
+  height: 70px;
+  justify-content: center;
+  text-align: center;
+}
+.title text{
+  margin-top: 10px;
+  color: white;
+  font-weight: 300;
+  background-color:#1E1E1E;
+  padding: 0,20px,0,20px;
+  width: 100px;
+}
+.input-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5px;
+  text-align: left;
+  width: 100%;
+}
+.input-title input{
+  width: 100%;
+  border:  #E7E7E7 2px solid;
+  height: 30px;
+}
+/* 标签 */
+.belongs{
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  background-color:#1E1E1E;
+}
+.label{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  text-align: center;
+}
+.label view{
+  color: white;
+  /* background-color:#787878; */
+  font-size: 14px;
+  border:E7E7E7 1px solid;
+  width: 80px;
+  padding-top:8px;
+  border-radius: 50%;
+  height: 25px;
+  margin-left: 20px;
+}
+
+.belongsimage{
+  margin-top: 15px;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  background-color:#1E1E1E;
+}
+
+.images{
+  margin-top: 10px;
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  height: 180px;
+  /* border: black 1px solid; */
+}
+.images image{
+  width: 48%;
+  height: 180px;
+}
+
+.belongsvideo{
+  margin-top: 15px;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  background-color:#1E1E1E;
+}
+
+
+.video{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 80%;
+  height: 226px;
+  text-align: center;
+  /* border: black 1px solid; */
+}
+
+.belongscontent{
+  margin-top: 15px;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  background-color:#1E1E1E;
+}
+
+.content{
+  width: 100%;
+  margin-top: 10px;
+}
+
+.content textarea{
+  min-height: 200px;
+  width: 100%;
+  height: auto;
+  border:  #E7E7E7 2px solid;
+}
+
+.add{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
