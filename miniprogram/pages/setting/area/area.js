@@ -34,128 +34,128 @@ Page({
       key: 'FP2BZ-BT43P-SIXDJ-LCLJ6-7PH2S-BFFHS'
     });
     // 页面初始化时获取用户当前定位,先注释掉,调试需要用真机才可以
-    // wx.getSetting({
-    //   success: (res) => {
-    //     // console.log(res)
-    //     // res.authSetting['scope.userLocation'] == undefined    表示 初始化进入该页面
-    //     // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
-    //     // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
-    //     if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
-    //       wx.showModal({
-    //         title: '请求授权当前位置',
-    //         content: '需要获取您的地理位置，请确认授权',
-    //         success: function (res) {
-    //           if (res.cancel) {
-    //             wx.showToast({
-    //               title: '拒绝授权',
-    //               icon: 'none',
-    //               duration: 1000
-    //             })
-    //           } else if (res.confirm) {
-    //             wx.openSetting({
-    //               success: function (dataAu) {
-    //                 if (dataAu.authSetting["scope.userLocation"] == true) {
-    //                   wx.showToast({
-    //                     title: '授权成功',
-    //                     icon: 'success',
-    //                     duration: 1000
-    //                   })
-    //                   //再次授权，调用wx.getLocation的API
-    //                   wx.getLocation({
-    //                     type: 'wgs84',
-    //                     success: function (res) {
-    //                       //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
-    //                       qqmapsdk.reverseGeocoder({
-    //                         location: {
-    //                           latitude: res.latitude,
-    //                           longitude: res.longitude
-    //                         },
-    //                         success: function (addressRes) {
-    //                           // console.log("addressRes=",addressRes)
-    //                           const province = addressRes.result.ad_info.province
-    //                           const city = addressRes.result.ad_info.city
-    //                           that.setData({
-    //                             currentCity: city,
-    //                             currentProvince: province
-    //                           })
-    //                         },
-    //                         fail: function (reserr) {
-    //                           console.log("reverseGeocoder fail reserr", reserr)
-    //                         }
-    //                       })
-    //                     },
-    //                     fail: function (res) {
-    //                       console.log("getLocation fail res={}", res)
-    //                     }
-    //                   })
-    //                 } else {
-    //                   wx.showToast({
-    //                     title: '授权失败',
-    //                     icon: 'none',
-    //                     duration: 1000
-    //                   })
-    //                 }
-    //               }
-    //             })
-    //           }
-    //         }
-    //       })
-    //     } else if (res.authSetting['scope.userLocation'] == undefined) {
-    //       //调用wx.getLocation的API
-    //       wx.getLocation({
-    //         type: 'wgs84',
-    //         success: function (res) {
-    //           //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
-    //           qqmapsdk.reverseGeocoder({
-    //             location: {
-    //               latitude: res.latitude,
-    //               longitude: res.longitude
-    //             },
-    //             success: function (addressRes) {
-    //               // console.log("reverseGeocoder addressRes", addressRes)
-    //               const province = addressRes.result.ad_info.province
-    //               var city = addressRes.result.ad_info.city
-    //               that.setData({
-    //                 currentCity: city,
-    //                 currentProvince: province
-    //               })
-    //             }
-    //           })
-    //         }
-    //       })
-    //     } else {
-    //       //调用wx.getLocation的API
-    //       wx.getLocation({
-    //         type: 'wgs84',
-    //         success: function (res) {
-    //           // console.log("getLocation的API res=", res)
-    //           //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
-    //           qqmapsdk.reverseGeocoder({
-    //             location: {
-    //               latitude: res.latitude,
-    //               longitude: res.longitude
-    //             },
-    //             success: function (addressRes) {
-    //               // console.log("reverseGeocoder addressRes",addressRes)
-    //               const province = addressRes.result.ad_info.province
-    //               const city = addressRes.result.ad_info.city
-    //               that.setData({
-    //                 currentCity: city,
-    //                 currentProvince: province
-    //               })
-    //             },
-    //             fail: function (errorRes) {
-    //               console.log("reverseGeocoder errorRes", errorRes)
-    //             }
-    //           })
-    //         }
-    //       })
-    //     }
-    //   },
-    //   fail: (res) => {
-    //     console.log(" getSetting fail res={}", res)
-    //   }
-    // })
+    wx.getSetting({
+      success: (res) => {
+        // console.log(res)
+        // res.authSetting['scope.userLocation'] == undefined    表示 初始化进入该页面
+        // res.authSetting['scope.userLocation'] == false    表示 非初始化进入该页面,且未授权
+        // res.authSetting['scope.userLocation'] == true    表示 地理位置授权
+        if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
+          wx.showModal({
+            title: '请求授权当前位置',
+            content: '需要获取您的地理位置，请确认授权',
+            success: function (res) {
+              if (res.cancel) {
+                wx.showToast({
+                  title: '拒绝授权',
+                  icon: 'none',
+                  duration: 1000
+                })
+              } else if (res.confirm) {
+                wx.openSetting({
+                  success: function (dataAu) {
+                    if (dataAu.authSetting["scope.userLocation"] == true) {
+                      wx.showToast({
+                        title: '授权成功',
+                        icon: 'success',
+                        duration: 1000
+                      })
+                      //再次授权，调用wx.getLocation的API
+                      wx.getLocation({
+                        type: 'wgs84',
+                        success: function (res) {
+                          //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
+                          qqmapsdk.reverseGeocoder({
+                            location: {
+                              latitude: res.latitude,
+                              longitude: res.longitude
+                            },
+                            success: function (addressRes) {
+                              // console.log("addressRes=",addressRes)
+                              const province = addressRes.result.ad_info.province
+                              const city = addressRes.result.ad_info.city
+                              that.setData({
+                                currentCity: city,
+                                currentProvince: province
+                              })
+                            },
+                            fail: function (reserr) {
+                              console.log("reverseGeocoder fail reserr", reserr)
+                            }
+                          })
+                        },
+                        fail: function (res) {
+                          console.log("getLocation fail res={}", res)
+                        }
+                      })
+                    } else {
+                      wx.showToast({
+                        title: '授权失败',
+                        icon: 'none',
+                        duration: 1000
+                      })
+                    }
+                  }
+                })
+              }
+            }
+          })
+        } else if (res.authSetting['scope.userLocation'] == undefined) {
+          //调用wx.getLocation的API
+          wx.getLocation({
+            type: 'wgs84',
+            success: function (res) {
+              //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
+              qqmapsdk.reverseGeocoder({
+                location: {
+                  latitude: res.latitude,
+                  longitude: res.longitude
+                },
+                success: function (addressRes) {
+                  // console.log("reverseGeocoder addressRes", addressRes)
+                  const province = addressRes.result.ad_info.province
+                  var city = addressRes.result.ad_info.city
+                  that.setData({
+                    currentCity: city,
+                    currentProvince: province
+                  })
+                }
+              })
+            }
+          })
+        } else {
+          //调用wx.getLocation的API
+          wx.getLocation({
+            type: 'wgs84',
+            success: function (res) {
+              // console.log("getLocation的API res=", res)
+              //根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
+              qqmapsdk.reverseGeocoder({
+                location: {
+                  latitude: res.latitude,
+                  longitude: res.longitude
+                },
+                success: function (addressRes) {
+                  // console.log("reverseGeocoder addressRes",addressRes)
+                  const province = addressRes.result.ad_info.province
+                  const city = addressRes.result.ad_info.city
+                  that.setData({
+                    currentCity: city,
+                    currentProvince: province
+                  })
+                },
+                fail: function (errorRes) {
+                  console.log("reverseGeocoder errorRes", errorRes)
+                }
+              })
+            }
+          })
+        }
+      },
+      fail: (res) => {
+        console.log(" getSetting fail res={}", res)
+      }
+    })
   },
 
   /**
