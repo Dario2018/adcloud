@@ -39,11 +39,11 @@ Component({
         imgDraw: {
           width: '750rpx',
           height: '1334rpx',
-          background: 'https://6461-dario202008-9rqzr-1302843186.tcb.qcloud.la/addmessagesiimage-o4F8D5aZHnAKocl78qGU-cvvC5Bo-2020/9/1-00%3A42%3A41.png?sign=cef3f260b5023453a94347ffe239cb07&t=1598892182',
+          background: '../../images/share-bg.png',
           views: [
             {
               type: 'image',
-              url: wx.getStorageSync('shareImageURL')||'../../images/logo1.png',
+              url: wx.getStorageSync('shareImageURL')||'../../images/logo.png',
               css: {
                 top: '32rpx',
                 left: '30rpx',
@@ -55,7 +55,7 @@ Component({
             },
             {
               type: 'image',
-              url: wx.getStorageSync('shareHeaderImageURL') || '../../images/show.png',
+              url: wx.getStorageSync('shareHeaderImageURL') || '../../images/loved.png',
               css: {
                 top: '404rpx',
                 left: '328rpx',
@@ -103,7 +103,7 @@ Component({
             },
             {
               type: 'image',
-              url: '../../images/datashow.png',
+              url: '../../images/mylogo.png',
               css: {
                 top: '804rpx',
                 left: '375rpx',

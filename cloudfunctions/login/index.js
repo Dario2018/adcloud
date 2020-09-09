@@ -75,7 +75,7 @@ const loginHelper = {
         mycollects: [], //喜欢的收藏文章
         loves: [], //自己关注的用户的openip
         fans: [], // 被其他用户关注的对应openid
-        bgUrl: ["https://img1.gtimg.com/10/1048/104857/10485731_980x1200_0.jpg"],
+        bgUrl: [],
         showCity: false,
         hasGender: false,
         role: 1, // 0-系统管理员，1-普通用户

@@ -1,7 +1,7 @@
 <!--miniprogram/pages/linkus/linkus.wxml-->
 <view class="comtainer">
 	<view class="image">
-		<image mode="aspectFit" data-src="../../images/mycode.jpg" bindtap='previewImage' src="../../images/mycode.jpg"></image>
+		<image mode="aspectFit" data-src="http://tmp/wx3856f0816e0f474f.o6zAJs-SpfDtWS8wIhMxSTyscHYM.0w0ZIFz3zJWD70de208468feee88694c8d9ce6ce2d48.jpg" bindtap='previewImage' src="http://tmp/wx3856f0816e0f474f.o6zAJs-SpfDtWS8wIhMxSTyscHYM.0w0ZIFz3zJWD70de208468feee88694c8d9ce6ce2d48.jpg"></image>
 	</view>
   <view class="title"><text>请点击图中二维码添加管理员微信反馈您问题</text></view>
 </view>

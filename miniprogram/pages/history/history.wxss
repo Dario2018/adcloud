@@ -23,7 +23,7 @@ page {
 .userbgImg {
   height: 170px;
   width: 100%;
-  background-color: #AEAFAD;
+  background-color: #30303A;
 }
 
 .userbgImg image {
