@@ -21,10 +21,10 @@
 		</view>
 		<!-- 消息图片 -->
 		<view class="images">
-			<view wx:if="{{messages.addImageoneUrl&&messages.addImageoneUrl.length!=0}}">
-				<image wx:for="{{messages.addImageoneUrl}}" wx:key="key" wx:for-index="idx" wx:for-item="imageUrl" src="{{imageUrl}}"></image>
+			<view wx:if="{{messages.addImageoneUrl&&messages.addImageoneUrl.length!=0}}" bindtap="previewImage" data-currenst="{{messages.addImageoneUrl}}">
+				<image wx:for="{{messages.addImageoneUrl}}"  wx:key="key" wx:for-index="idx" wx:for-item="imageUrl" src="{{imageUrl}}"></image>
 			</view>
-			<view wx:if="{{messages.addImagetwoUrl&&messages.addImagetwoUrl.length!=0}}">
+			<view wx:if="{{messages.addImagetwoUrl&&messages.addImagetwoUrl.length!=0}}" bindtap="previewImage" data-currenst="{{messages.addImageoneUrl}}">
 				<image wx:for="{{messages.addImagetwoUrl}}" wx:for-index="idx" wx:key="key" wx:for-item="imageUrl" src="{{imageUrl}}"></image>
 			</view>
 		</view>

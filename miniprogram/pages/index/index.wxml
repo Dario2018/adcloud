@@ -45,7 +45,7 @@
 
 <!-- 类型-2 -->
 <view class="type-text" wx:if="{{marketplace.length!=0}}" bindtap="refreshGetMessages" data-next="{{marketplacePageInfo.nextPage}}" data-total="{{marketplacePageInfo.totalSize}}" data-type="2">
-	<text>微商市场</text>s
+	<text>微商市场</text>
 </view>
 
 <view class="ad-view" wx:for="{{marketplace}}" wx:key="key" wx:for-index="idnex" wx:for-item="item">

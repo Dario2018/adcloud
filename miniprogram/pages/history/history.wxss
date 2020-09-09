@@ -4,8 +4,10 @@ page {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  font-family: '宋体';
-  font-size: 34rpx;
+  font-family: 'STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  padding: 0;
+  border: 0;
+  font: inherit;
 }
 
 /* 用户信息 */

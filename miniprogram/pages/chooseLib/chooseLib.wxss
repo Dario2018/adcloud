@@ -1,7 +1,17 @@
 /* pages/chooseLib/chooseLib.wxss */
 
 @import "../../style/guide.wxss";
-
+page {
+  background: #f6f6f6;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
 .black {
   color: black;
 }

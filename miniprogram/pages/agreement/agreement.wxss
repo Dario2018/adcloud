@@ -1,4 +1,15 @@
 /* miniprogram/pages/agreement/agreement.wxss */
+page {
+  background: #f6f6f6;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
 .userprocol{
   font-weight: bold;
 }

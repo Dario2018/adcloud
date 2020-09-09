@@ -68,7 +68,7 @@ Page({
    * 点击图片查看二维码
    */
   previewImage:function(e){
-    let current = e.target.dataset.src;   //这里获取到的是一张本地的图片
+    let current = e.currentTarget.dataset.src;   //这里获取到的是一张本地的图片
     wx.previewImage({
       current: current,//需要预览的图片链接列表
       urls: [current]  //当前显示图片的链接

@@ -3,9 +3,13 @@
 page {
   background: #f6f6f6;
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: flex-start;
-  font-family: '宋体';
+  font-family: 'STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif;
+  padding: 0;
+  border: 0;
+  font: inherit;
 }
 
 /* 图表展示 */
@@ -60,18 +64,19 @@ page {
 
 .type-text {
   display: flex;
-  flex-direction: column;
-  height: 40rpx;
-  width: 200rpx;
-  margin-top: 30px;
-  margin-left: 2px;
-  background-color: #272A2D;
-  color: #F5F5F5;
-  font-size: 35rpx;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  border-radius: 20px;
+flex-direction: column;
+height: 55rpx;
+width: 200rpx;
+margin-top: 30px;
+margin-left: 2px;
+background-color: #272A2D;
+color: #F5F5F5;
+font-size: 35rpx;
+padding-top: 4px;
+text-align: center;
+border-radius: 20px;
+
+
 }
 
 .ad-view {
@@ -139,7 +144,7 @@ page {
 .date {
   position: absolute;
   right: 5px;
-  width: 76px;
+  width: 85px;
   background-color: #272A2D;
   color: #F5F5F5;
   text-align: center;

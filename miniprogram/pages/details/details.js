@@ -166,5 +166,16 @@ Page({
       }
     })
   },
+  /**
+   * 点击图片浏览图片
+   */
+  previewImage:function(e){
+    let currenst = e.currentTarget.dataset.currenst;   //这里获取到的是一张本地的图片
+    console.log(currenst)
+    wx.previewImage({
+      current: currenst,//需要预览的图片链接列表
+      urls: currenst  //当前显示图片的链接
+    })
+  }
 
 })
