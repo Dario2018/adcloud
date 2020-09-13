@@ -15,7 +15,7 @@ Page({
     technoeduPageInfo: null, //页脚信息
     marketplacePageInfo: null,
     recommendPageInfo: null,
-    totalData:null // 七日总数
+    totalData:null, // 七日总数
   },
 
   onLoad: function () {
